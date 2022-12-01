@@ -1,0 +1,18 @@
+---
+# tasks file for http
+- name: install nginx
+  apt:
+    name: nginx
+    update_cache: true
+
+- name: Copy nginx config file to remote host
+  copy:
+     src: "{{ tmp_dir }}/default"
+     dest: "/etc/nginx/sites-available/default"
+     backup: true
+
+- name: restart nginx
+  service:
+    name: nginx
+    state: restarted
+

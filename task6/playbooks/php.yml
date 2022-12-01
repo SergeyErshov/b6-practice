@@ -1,0 +1,11 @@
+---
+- name: creating user and installing nginx to vm1 
+  hosts: php
+  gather_facts: false
+  become: true
+  become_user: "root"
+  become_method: "sudo"
+
+  roles:
+    - role: "/home/esm/ansible/playbooks/b6-pract/task6/roles/users"
+    - role: "/home/esm/ansible/playbooks/b6-pract/task6/roles/php"

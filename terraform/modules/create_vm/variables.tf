@@ -26,3 +26,9 @@ variable "nat" {
   type        = bool
   default     = true
 }
+
+variable "disk_size" {
+  description = "set size of the boot disk in GB"
+  type	      = string
+  default     = "5"
+}
