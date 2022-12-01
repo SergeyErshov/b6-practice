@@ -23,7 +23,7 @@ resource "yandex_compute_instance" "vm" {
   }
 
   metadata = {
-    ssh-keys           = "esm:${file("~/.ssh/id_ed25519.pub")}"
+    user-data          = "${file("/home/esm/ansible/playbooks/b6-pract/terraform/.metadata/yc_users.txt")}"
     serial-port-enable = 1
   }
 }

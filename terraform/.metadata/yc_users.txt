@@ -1,0 +1,8 @@
+#cloud-config
+users:
+  - name: esm
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh_authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOc1xp5yOCzF0CwTYfFJAVW3yfdDDDQqoIpTODBREWSF s.ershov.shoko@gmail.com 

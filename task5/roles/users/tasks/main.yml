@@ -1,0 +1,11 @@
+---
+# tasks file for users
+- name: add user user1 with generate key
+  user:
+    name: "{{ user }}"
+    create_home: true
+    shell: "/bin/bash"
+    generate_ssh_key: true
+    ssh_key_type: "ECDSA"
+    state: "present"
+      
