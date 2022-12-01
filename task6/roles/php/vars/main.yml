@@ -1,0 +1,3 @@
+---
+# vars file for php
+tmp_dir: '/home/esm/ansible/playbooks/b6-pract/task6/templates'
