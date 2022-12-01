@@ -7,12 +7,5 @@
     shell: "/bin/bash"
     generate_ssh_key: true
     ssh_key_type: "ECDSA"
-    ssh_key_file: ".ssh/user1"
     state: "present"
-
-- name: deploy SSH pub key
-  authorized_key:
-    user: "{{ user }}"
-    state: "present"
-    key: "{{ lookup('file', '/home/user1/.ssh/user1.pub') }}"
       
