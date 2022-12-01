@@ -1,3 +1,2 @@
 *.hcl
 **/.terraform
-**/.metadata
