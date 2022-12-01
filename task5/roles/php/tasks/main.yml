@@ -1,0 +1,27 @@
+---
+# tasks file for php
+- name: install php-fpm
+  apt:
+    pkg:
+      - php
+      - php-cli
+      - php-fpm
+      - php-json
+      - php-mysql
+      - php-zip
+      - php-gd
+      - php-mbstring
+      - php-curl
+      - php-xml
+      - php-pear
+      - php-bcmath
+    update_cache: true
+
+- name: Copy php-fmp config file to remote host
+  copy:
+    src: "/home/esm/ansible/playbooks/b6-pract/task5/templates/www.conf"
+    dest: "/etc/php/8.1/fpm/pool.d/www.conf"
+    backup: true
+  notify:
+    - restart php-fmp
+
