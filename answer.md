@@ -2,7 +2,7 @@
 
 TASKS:
 
-***
+---
 
  Task5: \
    ansible playbook: \ 
@@ -22,7 +22,7 @@ TASKS:
    result: \
 	https://drive.google.com/file/d/1cB6R3oM7j-TMHOAEEUFue1kIvdlld2T3/view?usp=share_link 
   
-***
+---
    
 Note: in this practice VMs in cloud was deployed by terraform
 
