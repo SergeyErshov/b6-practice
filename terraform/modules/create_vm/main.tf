@@ -1,7 +1,7 @@
 resource "yandex_compute_instance" "vm" {
   description        = "Creatind new instance with the name"
   name               = var.instance_name
-  platform_id	     = "standart-v3"
+  platform_id	     = "standard-v3"
   service_account_id = data.yandex_iam_service_account.user_id.id
   zone               = var.zone_name
 
@@ -19,7 +19,7 @@ resource "yandex_compute_instance" "vm" {
 
   network_interface {
     subnet_id = data.yandex_vpc_subnet.subnet.id
-    nat       = true
+    nat       = var.nat
   }
 
   metadata = {

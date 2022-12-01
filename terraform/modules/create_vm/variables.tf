@@ -20,3 +20,9 @@ variable "zone_name" {
   type        = string
   default     = "ru-central1-a"
 }
+
+variable "nat" {
+  description = "Must have the VM external IP"
+  type        = bool
+  default     = true
+}
