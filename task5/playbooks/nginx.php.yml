@@ -1,0 +1,63 @@
+---
+- name: installing apt
+  hosts: http
+  gather_facts: false
+  become: true
+  become_user: "root"
+  become_method: "sudo"
+  
+  vars:
+    temp_dir: '/home/esm/ansible/playbooks/b6-pract/task5/templates'
+  
+  tasks:
+    
+    - name: install nginx
+      apt:
+        name: nginx
+        update_cache: true
+
+    - name: install php-fpm
+      apt:
+        pkg:
+          - php
+          - php-cli
+          - php-fpm
+          - php-json
+          - php-mysql
+          - php-zip
+          - php-gd
+          - php-mbstring
+          - php-curl
+          - php-xml
+          - php-pear
+          - php-bcmath
+
+    - name: Copy nginx config file to remote host
+      copy:
+        src: "{{ temp_dir }}/default"
+        dest: "/etc/nginx/sites-available/default"
+        backup: true
+
+    - name: Copy php-fmp config file to remote host
+      copy:
+        src: "{{ temp_dir }}/www.conf"
+        dest: "/etc/php/8.1/fpm/pool.d/www.conf"
+        backup: true
+      notify:
+        - restart php-fpm
+        - restart nginx
+
+  handlers:
+
+   - name: restart php-fpm
+     service:
+       name: php8.1-fpm.service
+       state: restarted
+
+   - name: restart nginx
+     service:
+       name: nginx
+       state: restarted
+                    
+
+
