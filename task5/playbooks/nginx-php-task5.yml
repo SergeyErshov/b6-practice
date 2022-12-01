@@ -1,0 +1,11 @@
+---
+- name: installing nginx and php-fpm
+  hosts: http
+  gather_facts: false
+  become: true
+  become_user: "root"
+  become_method: "sudo"
+
+  roles:
+    - role: "/home/esm/ansible/playbooks/b6-pract/task5/roles/http"
+    - role: "/home/esm/ansible/playbooks/b6-pract/task5/roles/php"
