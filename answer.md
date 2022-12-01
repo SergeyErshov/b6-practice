@@ -5,7 +5,7 @@ TASKS:
 ***
 
 Task5: \
-ansible playbook: \ 
+ansible playbook: \
 https://github.com/SergeyErshov/b6-practice/blob/release/task5/playbooks/nginx-php-task5.yml \
 Yandex cloud screen after terraform apply: \
 https://drive.google.com/file/d/1EHAT6vzoU0xFF_YVG8EPM9RDpcYHCkKi/view?usp=share_link \
